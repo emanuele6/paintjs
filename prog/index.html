@@ -1,0 +1,56 @@
+<html>
+<script src="libs/p5.js"></script>
+<script>
+	var scl = 20
+	function rettangolo(x,y,w,r,g,b){
+		this.x = x
+		this.y = y
+		this.w = w
+		this.r = r
+		this.g = g
+		this.b = b
+		this.move = (c) => {
+			switch(c) {
+				case 'up':
+					this.y -= scl
+					break
+				case 'down':
+					this.y += scl
+					break
+				case 'left':
+					this.x -= scl
+					break
+				case 'right':
+					this.x += scl
+			}
+		}
+		this.draw = () => {
+			fill(this.r,this.g,this.b)
+			rect(this.x,this.y,this.w,this.w)
+		}
+	}
+	function keyPressed(){
+		if (keyCode == 37) r1.move('left')
+		if (keyCode == 38) r1.move('up')
+		if (keyCode == 39) r1.move('right')
+		if (keyCode == 40) r1.move('down')
+		if (keyCode == 65) r2.move('left')
+		if (keyCode == 87) r2.move('up')
+		if (keyCode == 68) r2.move('right')
+		if (keyCode == 83) r2.move('down')
+		if (keyCode == 82) background(bg) //r
+}
+	var bg = 51
+	var r1 = new rettangolo(scl,scl,scl,0,255,0)
+	var r2 = new rettangolo(28*scl,28*scl,scl,0,0,255)
+	function setup() {
+		createCanvas(30*scl,30*scl)
+		background(bg)
+	}
+	function draw() {
+		//background(bg)
+		r1.draw()
+		r2.draw()
+	}
+</script>
+</html>
