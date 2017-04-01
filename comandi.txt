@@ -1,0 +1,6 @@
+Muovere cursore verde:
+  freccette
+Muovere cursore blu:
+  WASD
+Cancellare tutto:
+  R
